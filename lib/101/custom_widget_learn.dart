@@ -9,14 +9,19 @@ class CustomWidgetLearns extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Center(
               child: Padding(
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
               horizontal: 10,
             ),
-            child: CustomFootButton(title: title),
+            child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: CustomFootButton(title: title, onPressed: () {})),
           )),
+          const SizedBox(height: 100),
+          CustomFootButton(title: title, onPressed: () {}),
         ],
       ),
     );
@@ -34,8 +39,9 @@ class _PaddingUtility {
 }
 
 class CustomFootButton extends StatelessWidget with _ColorsUtility {
-  CustomFootButton({super.key, required this.title});
+  CustomFootButton({super.key, required this.title, required this.onPressed});
   final String title;
+  final void Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -44,10 +50,10 @@ class CustomFootButton extends StatelessWidget with _ColorsUtility {
           primary: redColor,
           shape: const StadiumBorder(),
         ),
-        onPressed: () {},
-        child: Center(
-          child: Padding(
-            padding: _PaddingUtility().normal2xPadding,
+        onPressed: onPressed,
+        child: Padding(
+          padding: _PaddingUtility().normal2xPadding,
+          child: Center(
             child: Text(
               title,
               style: Theme.of(context).textTheme.subtitle2?.copyWith(
