@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:veli_capraz/product/counter_hello_button.dart';
 
 class StatefullLearn extends StatefulWidget {
   const StatefullLearn({super.key});
@@ -10,7 +11,7 @@ class StatefullLearn extends StatefulWidget {
 class _StatefullLearnState extends State<StatefullLearn> {
   int _countValue = 0;
 
-  int _counterCustomer = 0;
+  final int _counterCustomer = 0;
 
   void _updateCounter(bool isIncrement) {
     if (isIncrement) {
@@ -40,13 +41,7 @@ class _StatefullLearnState extends State<StatefullLearn> {
             style: Theme.of(context).textTheme.headline1,
           )),
           const Placeholder(),
-          ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  ++_counterCustomer;
-                });
-              },
-              child: Text('Merhaba $_counterCustomer'))
+          const CounterHelloButton()
         ],
       ),
     );
