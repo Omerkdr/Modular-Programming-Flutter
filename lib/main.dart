@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '101/statefull_learns.dart';
+import '101/navigation_learn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,21 +14,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Core',
-      debugShowCheckedModeBanner: false,
-
-      theme: ThemeData.dark().copyWith(
-          listTileTheme:
-              const ListTileThemeData(contentPadding: EdgeInsets.zero),
-          progressIndicatorTheme:
-              const ProgressIndicatorThemeData(color: Colors.white),
-          appBarTheme: const AppBarTheme(
-            systemOverlayStyle: SystemUiOverlayStyle.light,
-            centerTitle: true,
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-          )),
-      home: const StatefullLearn(), // calistirmak istedigimiz dosya
-    );
+        title: 'Core',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData.dark().copyWith(
+            listTileTheme:
+                const ListTileThemeData(contentPadding: EdgeInsets.zero),
+            progressIndicatorTheme:
+                const ProgressIndicatorThemeData(color: Colors.white),
+            appBarTheme: const AppBarTheme(
+              systemOverlayStyle: SystemUiOverlayStyle.light,
+              centerTitle: true,
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+            )),
+        home: const NavigationLearn() // calistirmak istedigimiz dosya
+        );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:veli_capraz/product/counter_hello_button.dart';
+import 'package:veli_capraz/product/language/language_items.dart';
 
 class StatefullLearn extends StatefulWidget {
   const StatefullLearn({super.key});
@@ -25,7 +26,7 @@ class _StatefullLearnState extends State<StatefullLearn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: const Text(LanguageItems.welcomeTitle)),
       floatingActionButton: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
