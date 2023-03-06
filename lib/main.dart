@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '101/navigation_learn.dart';
+import '202/services/service_post_learn_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +17,14 @@ class MyApp extends StatelessWidget {
         title: 'Core',
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark().copyWith(
+            tabBarTheme: const TabBarTheme(
+              labelColor: Colors.blue,
+              unselectedLabelColor: Colors.white,
+              indicatorSize: TabBarIndicatorSize.label,
+            ),
+            bottomAppBarTheme: const BottomAppBarTheme(
+              shape: CircularNotchedRectangle(),
+            ),
             listTileTheme:
                 const ListTileThemeData(contentPadding: EdgeInsets.zero),
             progressIndicatorTheme:
@@ -27,7 +35,7 @@ class MyApp extends StatelessWidget {
               backgroundColor: Colors.transparent,
               elevation: 0,
             )),
-        home: const NavigationLearn() // calistirmak istedigimiz dosya
+        home: const ServicePostLearn() // calistirmak istedigimiz dosya
         );
   }
 }
