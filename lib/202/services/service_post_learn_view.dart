@@ -36,7 +36,7 @@ class _ServiceLearnState extends State<ServicePostLearn> {
     _changeLoading(); //reload
     final response = await _dio.post('/post', data: postModel);
     if (response.statusCode == HttpStatus.created) {
-      name = 'Basarili';
+      name = 'Success';
     }
     _changeLoading();
   }
