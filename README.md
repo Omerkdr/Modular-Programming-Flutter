@@ -1,4 +1,4 @@
-# veli_capraz
+# FlutterModular
 
 A new Flutter project.
 
