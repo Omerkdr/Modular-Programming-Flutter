@@ -6,12 +6,20 @@ class LightTheme {
 
   LightTheme() {
     theme = ThemeData(
+        appBarTheme: AppBarTheme(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        ),
+        scaffoldBackgroundColor: Colors.white,
         floatingActionButtonTheme:
             const FloatingActionButtonThemeData(backgroundColor: Colors.red),
         buttonTheme: ButtonThemeData(
             colorScheme: ColorScheme.light(
                 onPrimary: Colors.purple, onSecondary: _lightColor.blueSea)),
         colorScheme: const ColorScheme.light(),
+        checkboxTheme: const CheckboxThemeData(
+            fillColor: MaterialStatePropertyAll(Colors.green),
+            side: BorderSide(color: Colors.green)),
         textTheme: ThemeData.light().textTheme.copyWith(
                 titleMedium: TextStyle(
               fontSize: 14,

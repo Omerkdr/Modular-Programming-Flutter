@@ -15,9 +15,11 @@ class _PackageLearnViewState extends State<PackageLearnView> with LaunchMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        launchURL('https://pub.dev/packages/url_launcher');
-      }),
+      floatingActionButton: FloatingActionButton(
+          backgroundColor: Theme.of(context).buttonTheme.colorScheme?.onPrimary,
+          onPressed: () {
+            launchURL('https://pub.dev/packages/url_launcher');
+          }),
       body: Column(
         children: [
           Text(

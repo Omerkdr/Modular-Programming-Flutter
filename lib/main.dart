@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
-import '202/package_learn_view.dart';
+import '202/animated_learn.dart';
 import '202/theme/light_theme.dart';
 
 void main() {
@@ -18,6 +17,7 @@ class MyApp extends StatelessWidget {
         title: 'Core',
         debugShowCheckedModeBanner: false,
         theme: LightTheme().theme,
+
         // theme: ThemeData.dark().copyWith(
         //     tabBarTheme: const TabBarTheme(
         //       labelColor: Colors.blue,
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         //       backgroundColor: Colors.transparent,
         //       elevation: 0,
         //     )),
-        home: const PackageLearnView() // calistirmak istedigimiz dosya
+        home: const AnimatedLearnView() // calistirmak istedigimiz dosya
         );
   }
 }
