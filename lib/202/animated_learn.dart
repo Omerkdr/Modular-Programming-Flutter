@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const kZero = 0;
+
 class AnimatedLearnView extends StatefulWidget {
   const AnimatedLearnView({super.key});
 
@@ -7,10 +9,21 @@ class AnimatedLearnView extends StatefulWidget {
   State<AnimatedLearnView> createState() => _AnimatedLearnViewState();
 }
 
-class _AnimatedLearnViewState extends State<AnimatedLearnView> {
+class _AnimatedLearnViewState extends State<AnimatedLearnView>
+    with TickerProviderStateMixin {
   // Text('data', style: context.textTheme().displayLarge)
+
+  @override
+  void initState() {
+    super.initState();
+    controller =
+        AnimationController(vsync: this, duration: _DurationItems.durationLow);
+  }
+
   bool _isVisible = false;
   bool _isOpacity = false;
+
+  late AnimationController controller; // late varsa init state
 
   void _changeVisible() {
     setState(() {
@@ -33,6 +46,7 @@ class _AnimatedLearnViewState extends State<AnimatedLearnView> {
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             _changeVisible();
+            controller.animateTo(_isVisible ? 1 : 0);
           },
         ),
         body: Column(
@@ -49,10 +63,39 @@ class _AnimatedLearnViewState extends State<AnimatedLearnView> {
                 icon: const Icon(Icons.precision_manufacturing_rounded),
               ),
             ),
-            AnimatedDefaultTextStyle(
-                style: context.textTheme().titleMedium ?? const TextStyle(),
+            AnimatedIcon(
+              icon: AnimatedIcons.view_list,
+              progress: controller,
+            ),
+            AnimatedContainer(
                 duration: _DurationItems.durationLow,
-                child: const Text('Kurt'))
+                height:
+                    _isVisible ? 0 : (MediaQuery.of(context).size.width) * 0.2,
+                width: (MediaQuery.of(context).size.height) * 0.2,
+                color: Colors.purple,
+                margin: const EdgeInsets.all(15)),
+            Expanded(
+                child: Stack(
+              children: const [
+                AnimatedPositioned(
+                  top: 20,
+                  duration: _DurationItems.durationLow,
+                  child: Text('data'),
+                )
+              ],
+            )),
+            Expanded(
+              child: AnimatedList(itemBuilder: (context, index, animation) {
+                return const Text('Data');
+              }),
+            ),
+            AnimatedDefaultTextStyle(
+                style: (_isVisible
+                        ? context.textTheme().displayLarge
+                        : context.textTheme().titleMedium) ??
+                    const TextStyle(),
+                duration: _DurationItems.durationLow,
+                child: const Text('Kurt')),
           ],
         ));
   }
