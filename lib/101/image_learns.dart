@@ -29,6 +29,7 @@ class ImageItems {
   final String twoplus = 'assets/png/twoplus.png';
   final String twoplusWithoutPath = 'twoplus';
   final String oneplusWithoutPath = 'assets/onePlus.png';
+  final String protonAjans = 'assets/protonajans.png';
 }
 
 class PngImage extends StatelessWidget {

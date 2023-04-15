@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '202/animated_learn.dart';
+import '202/alert_learn.dart';
 import '202/theme/light_theme.dart';
 
 void main() {
@@ -35,9 +35,9 @@ class MyApp extends StatelessWidget {
         //       systemOverlayStyle: SystemUiOverlayStyle.light,
         //       centerTitle: true,
         //       backgroundColor: Colors.transparent,
-        //       elevation: 0,
+        //       e levation: 0,
         //     )),
-        home: const AnimatedLearnView() // calistirmak istedigimiz dosya
+        home: const AlertLearn() // calistirmak istedigimiz dosya
         );
   }
 }

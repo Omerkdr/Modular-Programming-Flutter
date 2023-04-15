@@ -79,6 +79,7 @@ class _AnimatedLearnViewState extends State<AnimatedLearnView>
               children: const [
                 AnimatedPositioned(
                   top: 20,
+                  curve: Curves.elasticInOut,
                   duration: _DurationItems.durationLow,
                   child: Text('data'),
                 )
