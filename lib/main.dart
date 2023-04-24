@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '202/theme/light_theme.dart';
-import '303/tabbar_advance.dart';
+import '303/reqrest_resource/view/req_res_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         //       backgroundColor: Colors.transparent,
         //       e levation: 0,
         //     )),
-        home: const TabAdvanceLearn() // calistirmak istedigimiz dosya
+        home: const ReqResView() // calistirmak istedigimiz dosya
         );
   }
 }
