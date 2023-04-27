@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:veli_capraz/303/navigator/navigate_home_detail_view.dart';
+import 'package:veli_capraz/product/constant/project_items.dart';
+import 'package:veli_capraz/product/global/resource_context.dart';
+import 'package:veli_capraz/product/global/theme_notifer.dart';
 
-import '202/theme/light_theme.dart';
-import '303/reqrest_resource/view/req_res_view.dart';
+import '303/lottie_learn.dart';
+import '303/navigator/navigate_home_view.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(
+    providers: [
+      Provider(create: (_) => ResourceContext()),
+      ChangeNotifierProvider<ThemeNotifer>(
+        create: (context) => ThemeNotifer(),
+      )
+    ],
+    builder: (context, child) => const MyApp(),
+  )); //Osman
 }
 
 class MyApp extends StatelessWidget {
@@ -14,9 +27,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Core',
+        title: ProjectItems.projectName,
         debugShowCheckedModeBanner: false,
-        theme: LightTheme().theme,
+        theme: context.watch<ThemeNotifer>().currentTheme,
 
         // theme: ThemeData.dark().copyWith(
         //     tabBarTheme: const TabBarTheme(
@@ -37,7 +50,14 @@ class MyApp extends StatelessWidget {
         //       backgroundColor: Colors.transparent,
         //       e levation: 0,
         //     )),
-        home: const ReqResView() // calistirmak istedigimiz dosya
+        // initialRoute: '/',
+        routes: {
+          "/": (context) => const LottieLearn(), //initial açıldıpı yer demek
+
+          "/home": (context) => const NavigateHomeView(),
+          "/homeDetail": (context) => const NavigateHomeDetail(),
+        },
+        home: const LottieLearn() // calistirmak istedigimiz dosya
         );
   }
 }

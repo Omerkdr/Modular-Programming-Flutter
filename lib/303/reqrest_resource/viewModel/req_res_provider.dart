@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:veli_capraz/product/global/resource_context.dart';
 
 import '../model/resource_model.dart';
 import '../service/reqres_service.dart';
@@ -22,5 +23,9 @@ class ReqResProvider extends ChangeNotifier {
     _changeLoading();
     resources = (await reqresService.fetchResourceItem())?.data ?? [];
     _changeLoading();
+  }
+
+  void saveToLocale(ResourceContext resourceContext) {
+    resourceContext.saveModel(ResourceModel(data: resources));
   }
 }

@@ -1,3 +1,5 @@
+import 'package:equatable/equatable.dart';
+
 class UserManagement<T extends AdminUser> {
   final T admin;
 
@@ -6,13 +8,13 @@ class UserManagement<T extends AdminUser> {
     print(user.name);
   }
 
-  int caculateMoney(List<GenericUser> users) {
+  int calculateMoney(List<GenericUser> users) {
     int sum = 0;
     for (var item in users) {
       sum += item.money;
     }
-
     int initialValue = admin.role == 1 ? admin.money : 0;
+
     final sumMoney = users.map((e) => e.money).fold<int>(
         initialValue, (previousValue, element) => previousValue + element);
 
@@ -21,36 +23,44 @@ class UserManagement<T extends AdminUser> {
     return monney;
   }
 
-  showNames(List<GenericUser> users) {}
-}
-
-Iterable<OKModel<R>>? showNames<R>(List<GenericUser> users) {
-  //   only rol 1 olan
-  if (R == String) {
-    final names =
-        users.map((e) => OKModel<R>(e.name.split('').toList().cast()));
-    return names;
+  Iterable<VBModel<R>>? showNames<R>(List<GenericUser> users) {
+    if (R == String) {
+      final names =
+          users.map((e) => VBModel<R>(e.name.split('').toList().cast<R>()));
+      return names;
+    }
+    return null;
   }
-  return null;
 }
 
-class OKModel<T> {
-  final String name = 'okk';
+class VBModel<T> {
+  final String name = 'vb';
   final List<T> items;
 
-  OKModel(this.items);
+  VBModel(this.items);
 }
 
-class GenericUser {
+class GenericUser extends Equatable {
   final String name;
   final String id;
   final int money;
 
-  GenericUser(this.name, this.id, this.money);
+  const GenericUser(this.name, this.id, this.money);
+
+  bool findUserName(String name) {
+    return this.name == name;
+  }
+
+  @override
+  String toString() => 'GenericUser(name: $name, id: $id, money: $money)';
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [id];
 }
 
 class AdminUser extends GenericUser {
   final int role;
-
-  AdminUser(super.name, super.id, super.money, this.role);
+  const AdminUser(String name, String id, int money, this.role)
+      : super(name, id, money);
 }
