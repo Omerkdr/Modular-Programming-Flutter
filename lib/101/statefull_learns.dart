@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:veli_capraz/product/counter_hello_button.dart';
-import 'package:veli_capraz/product/language/language_items.dart';
+import '../product/counter_hello_button.dart';
+import '../product/language/language_items.dart';
 
 class StatefullLearn extends StatefulWidget {
   const StatefullLearn({super.key});
@@ -39,7 +39,7 @@ class _StatefullLearnState extends State<StatefullLearn> {
           Center(
               child: Text(
             _countValue.toString(),
-            style: Theme.of(context).textTheme.headline1,
+            style: Theme.of(context).textTheme.displayLarge,
           )),
           const Placeholder(),
           const CounterHelloButton()

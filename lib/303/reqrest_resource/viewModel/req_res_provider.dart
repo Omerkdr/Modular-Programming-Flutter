@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:veli_capraz/303/reqrest_resource/model/resource_model.dart';
-import '../../../product/global/resource_context.dart';
 
+import '../../../product/global/resource_context.dart';
+import '../model/resource_model.dart';
 import '../service/reqres_service.dart';
 
 class ReqResProvider extends ChangeNotifier {

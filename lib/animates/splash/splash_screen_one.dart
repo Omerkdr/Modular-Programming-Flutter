@@ -1,7 +1,7 @@
-import 'package:animations/animations.dart';
-import 'package:flutter/material.dart';
 import 'dart:async';
 
+import 'package:animations/animations.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class MyWidget extends StatefulWidget {

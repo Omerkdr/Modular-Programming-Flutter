@@ -1,6 +1,7 @@
-import '../model/login_model.dart';
-import '../../../../../product/model/token_model.dart';
 import 'package:vexana/vexana.dart';
+
+import '../../../../../product/model/token_model.dart';
+import '../model/login_model.dart';
 
 abstract class ILoginService {
   final INetworkManager networkManager;

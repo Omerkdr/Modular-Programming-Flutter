@@ -1,7 +1,8 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:veli_capraz/303/reqrest_resource/model/resource_model.dart';
+
+import '../model/resource_model.dart';
 
 abstract class IReqresService {
   IReqresService(this.dio);

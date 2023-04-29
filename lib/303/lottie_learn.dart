@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import '../product/constant/duration_items.dart';
-import '../product/constant/lottie_items.dart';
-import '../product/navigator/navigator_routes.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:uikit/uikit.dart';
 
+import '../product/constant/duration_items.dart';
+import '../product/constant/lottie_items.dart';
 import '../product/global/theme_notifer.dart';
+import '../product/navigator/navigator_routes.dart';
 
 class LottieLearn extends StatefulWidget {
   const LottieLearn({Key? key}) : super(key: key);

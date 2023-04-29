@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:veli_capraz/101/image_learns.dart';
+import 'image_learns.dart';
 
 class NoteDemos extends StatelessWidget {
   const NoteDemos({super.key});

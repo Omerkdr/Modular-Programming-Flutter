@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:veli_capraz/202/package/launch_mixin.dart';
 
+import 'package/launch_mixin.dart';
 import 'package/loading_bar.dart';
 
 class PackageLearnView extends StatefulWidget {

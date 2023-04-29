@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../product/utility/image_upload_manager.dart';
 
 import '../../product/utility/image_upload.dart';
+import '../../product/utility/image_upload_manager.dart';
 
 class ImagePickerGenericView extends StatefulWidget {
   const ImagePickerGenericView({Key? key}) : super(key: key);
@@ -36,7 +36,8 @@ class _ImagePickerGenericViewState extends State<ImagePickerGenericView> {
               _imageUploadManger.fetchFromLibrary();
             },
             child: const Text('Fetch from normal')),
-        ElevatedButton(onPressed: () {}, child: const Text('Fetch from multiple')),
+        ElevatedButton(
+            onPressed: () {}, child: const Text('Fetch from multiple')),
       ]),
     );
   }

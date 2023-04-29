@@ -32,7 +32,8 @@ class _LoginViewState extends State<LoginView> {
           title: BlocBuilder<LoginCubit, LoginState>(
             builder: (context, state) {
               return state.isLoading
-                  ? CircularProgressIndicator(color: context.colorScheme.secondary)
+                  ? CircularProgressIndicator(
+                      color: context.colorScheme.secondary)
                   : const SizedBox();
             },
           ),

@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
-import '../model/login_model.dart';
 import '../../../../../product/model/token_model.dart';
+import '../model/login_model.dart';
 
 class LoginState extends Equatable {
   final bool isLoading;
@@ -9,7 +9,11 @@ class LoginState extends Equatable {
   final TokenModel? tokenModel;
   final bool isCompleted;
 
-  const LoginState({this.isLoading = false, this.model, this.tokenModel, this.isCompleted = false});
+  const LoginState(
+      {this.isLoading = false,
+      this.model,
+      this.tokenModel,
+      this.isCompleted = false});
 
   @override
   List<Object?> get props => [isLoading, model];

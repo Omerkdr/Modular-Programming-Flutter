@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:veli_capraz/product/global/resource_context.dart';
+
+import '../product/global/resource_context.dart';
 
 class ImageLearn extends StatelessWidget {
   const ImageLearn({super.key});

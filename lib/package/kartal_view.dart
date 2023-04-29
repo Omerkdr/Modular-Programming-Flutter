@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../202/image_learn_202.dart';
 import 'package:kartal/kartal.dart';
+
+import '../../../202/image_learn_202.dart';
 
 typedef ImageLoader = void Function(String url);
 
@@ -21,7 +22,8 @@ class _KartalViewState extends State<KartalView> {
         children: [
           InkWell(
               onTap: () {
-                context.navigateToPage(const ImageLearn202(), type: SlideType.BOTTOM);
+                context.navigateToPage(const ImageLearn202(),
+                    type: SlideType.BOTTOM);
               },
               child: Text('Kartal', style: context.textTheme.headline1)),
           Icon(context.isIOSDevice ? Icons.ios_share : Icons.android_rounded),
@@ -34,7 +36,8 @@ class _KartalViewState extends State<KartalView> {
           InkWell(
               onTap: () {
                 'vbacik.10@gmail.com'.launchEmail;
-                'https://github.com/VB10/Flutter-Full-Learn/issues/3'.launchWebsite;
+                'https://github.com/VB10/Flutter-Full-Learn/issues/3'
+                    .launchWebsite;
               },
               child: Text('vb', style: context.textTheme.headline1))
         ],

@@ -1,5 +1,6 @@
-import 'shared_not_initalze.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'shared_not_initalze.dart';
 
 enum SharedKeys { counter, users }
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../product/navigator/navigator_routes.dart';
 
 import '../../product/mixin/navigator_mixin.dart';
+import '../../product/navigator/navigator_routes.dart';
 
 class NavigateHomeView extends StatefulWidget {
   const NavigateHomeView({Key? key}) : super(key: key);

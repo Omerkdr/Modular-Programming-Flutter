@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import '../shared_manager.dart';
-
 import '../user_model.dart';
 
 class UserCacheManager {
@@ -11,8 +10,9 @@ class UserCacheManager {
 
   Future<void> saveItems(List<User> items) async {
     // Compute
-    final _items = items.map((element) => jsonEncode(element.toJson())).toList();
-    await sharedManager.saveStringItems(SharedKeys.users, _items);
+    final items0 =
+        items.map((element) => jsonEncode(element.toJson())).toList();
+    await sharedManager.saveStringItems(SharedKeys.users, items0);
   }
 
   List<User>? getItems() {

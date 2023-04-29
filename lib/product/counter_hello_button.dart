@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:veli_capraz/product/language/language_items.dart';
+
+import 'language/language_items.dart';
 
 class CounterHelloButton extends StatefulWidget {
   const CounterHelloButton({super.key});

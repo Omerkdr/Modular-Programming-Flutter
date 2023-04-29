@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:veli_capraz/101/image_learns.dart';
-import 'package:veli_capraz/303/reqrest_resource/service/reqres_service.dart';
-import 'package:veli_capraz/303/reqrest_resource/viewModel/req_res_provider.dart';
-import 'package:veli_capraz/product/extension/string_extension.dart';
-import 'package:veli_capraz/product/global/resource_context.dart';
-import 'package:veli_capraz/product/service/project_dio.dart';
+import '../../../101/image_learns.dart';
+import '../service/reqres_service.dart';
+import '../viewModel/req_res_provider.dart';
+import '../../../product/extension/string_extension.dart';
+import '../../../product/global/resource_context.dart';
+import '../../../product/service/project_dio.dart';
 
 import '../../../product/global/theme_notifer.dart';
 import '../model/resource_model.dart';

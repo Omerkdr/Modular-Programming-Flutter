@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:veli_capraz/core/random_images.dart';
+
+import '../core/random_images.dart';
 
 class ListTileLearn extends StatelessWidget {
   const ListTileLearn({super.key});

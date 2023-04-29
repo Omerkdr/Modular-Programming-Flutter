@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+
 part 'resource_model.g.dart';
 
 String _fetchCustom(String data) {

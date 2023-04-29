@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+
 import 'navigator_routes.dart';
 
 //SİNGELTON BİR KULLANIM

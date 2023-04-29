@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:veli_capraz/202/animated_learn.dart';
+
+import 'animated_learn.dart';
 
 class ImageLearn202 extends StatefulWidget {
   const ImageLearn202({super.key});
