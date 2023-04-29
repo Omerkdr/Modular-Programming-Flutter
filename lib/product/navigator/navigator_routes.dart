@@ -3,9 +3,9 @@ import '../../303/navigator/navigate_home_detail_view.dart';
 import '../../303/navigator/navigate_home_view.dart';
 
 class NavigatorRoures {
-  static const paragfh = "/";
+  static const paraghf = "/";
   final items = {
-    paragfh: (context) => const LottieLearn(),
+    paraghf: (context) => const LottieLearn(),
     NavigateRoutes.home.withParaf: (context) => const NavigateHomeView(),
     NavigateRoutes.detail.withParaf: (context) => const NavigateHomeDetail(),
   };

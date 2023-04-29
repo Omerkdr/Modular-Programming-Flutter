@@ -28,6 +28,7 @@ class _LottieLearnState extends State<LottieLearn>
     navigateToHome();
   }
 
+  //sayfa routelama
   Future<void> navigateToHome() async {
     await Future.delayed(const Duration(seconds: 1));
     Navigator.of(context).pushReplacementNamed(NavigateRoutes.home.withParaf);

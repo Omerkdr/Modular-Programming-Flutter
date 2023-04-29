@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:veli_capraz/product/global/resource_context.dart';
+import 'package:veli_capraz/303/reqrest_resource/model/resource_model.dart';
+import '../../../product/global/resource_context.dart';
 
-import '../model/resource_model.dart';
 import '../service/reqres_service.dart';
 
 class ReqResProvider extends ChangeNotifier {
@@ -21,11 +21,16 @@ class ReqResProvider extends ChangeNotifier {
 
   Future<void> _fetch() async {
     _changeLoading();
-    resources = (await reqresService.fetchResourceItem())?.data ?? [];
+    resources = await fetchItems();
     _changeLoading();
   }
 
-  void saveToLocale(ResourceContext resourceContext) {
+  Future<List<Data>> fetchItems() async {
+    return (await reqresService.fetchResourceItem())?.data ?? [];
+  }
+
+  bool? saveToLocale(ResourceContext resourceContext, List<Data> resources) {
     resourceContext.saveModel(ResourceModel(data: resources));
+    return resourceContext.model?.data?.isNotEmpty;
   }
 }

@@ -13,20 +13,20 @@ mixin NavigatorCustom<T extends MyApp> on Widget {
       return _navigateToNormal(const MobxImageUpload());
     }
 
-    final _routes = routeSettings.name == NavigatorRoures.paragfh
+    final routes = routeSettings.name == NavigatorRoures.paraghf
         ? NavigateRoutes.init
         : NavigateRoutes.values.byName(routeSettings.name!.substring(1));
 
-    switch (_routes) {
+    switch (routes) {
       case NavigateRoutes.init:
         return _navigateToNormal(const LottieLearn());
       case NavigateRoutes.home:
         return _navigateToNormal(const NavigateHomeView());
       case NavigateRoutes.detail:
-        final _id = routeSettings.arguments;
+        final id = routeSettings.arguments;
         return _navigateToNormal(
             NavigateHomeDetail(
-              id: _id is String ? _id : null,
+              id: id is String ? id : null,
             ),
             isFullScreenDialog: true);
     }

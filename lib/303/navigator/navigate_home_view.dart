@@ -10,16 +10,18 @@ class NavigateHomeView extends StatefulWidget {
   State<NavigateHomeView> createState() => _NavigateHomeViewState();
 }
 
-class _NavigateHomeViewState extends State<NavigateHomeView> with NavigatorMixin {
+class _NavigateHomeViewState extends State<NavigateHomeView>
+    with NavigatorMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton.large(
           child: const Icon(Icons.abc_rounded),
           onPressed: () async {
-            router.pushToPage(NavigateRoutes.detail, arguments: "vb10");
+            //router.pushToPage(NavigateRoutes.detail, arguments: "okk8");
             // await NavigatorManager.instance.pushToPage(NavigateRoutes.detail, arguments: "vb10");
-            // Navigator.of(context).pushNamed(NavigateRoutes.detail.withParaf, arguments: "abc");
+            Navigator.of(context)
+                .pushNamed(NavigateRoutes.detail.withParaf, arguments: "Ödeme");
           }),
       appBar: AppBar(title: Text(toString())),
     );

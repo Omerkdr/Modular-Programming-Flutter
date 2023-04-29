@@ -53,6 +53,9 @@ dependencies:
   #core
   equatable: ^2.0.5
   collection: any
+
+  #Context
+  kartal: ^2.8.0
   
   
   #cache
@@ -79,6 +82,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   build_runner: ^2.3.3
   mobx_codegen: ^2.2.0
+  mockito: ^5.4.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

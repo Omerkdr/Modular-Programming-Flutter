@@ -12,7 +12,8 @@ class MobxImageUpload extends StatefulWidget {
 }
 
 class _MobxImageUploadState extends State<MobxImageUpload> {
-  final String _imageUplaodLottiePath = 'https://assets3.lottiefiles.com/packages/lf20_urbk83vw.json';
+  final String _imageUplaodLottiePath =
+      'https://assets6.lottiefiles.com/datafiles/9jPPC5ogUyD6oQq/data.json';
 
   final _imageUploadViewModel = ImageUploadViewModel();
   final _imageUploadManger = ImageUploadManager();
@@ -25,10 +26,12 @@ class _MobxImageUploadState extends State<MobxImageUpload> {
             _imageUploadViewModel.saveDataToService();
           }),
       appBar: AppBar(
-        title: const Text('Image Upload'),
+        title: const Center(child: Text('Image Upload')),
         actions: [
           Observer(builder: (_) {
-            return _imageUploadViewModel.isLoading ? const CircularProgressIndicator() : const SizedBox();
+            return _imageUploadViewModel.isLoading
+                ? const CircularProgressIndicator()
+                : const SizedBox();
           }),
           Observer(builder: (_) {
             return Text(_imageUploadViewModel.downloadText);
@@ -42,13 +45,13 @@ class _MobxImageUploadState extends State<MobxImageUpload> {
             elevation: 10,
             child: Row(
               children: [
-                Expanded(child: _localImage()),
+                Center(child: Expanded(child: _localImage())),
                 Expanded(child: _imageUploadButton()),
               ],
             ),
           ),
         ),
-        const Divider(),
+        const Center(child: Divider()),
         Expanded(
           flex: 4,
           child: _imageNetwork(),
@@ -60,7 +63,9 @@ class _MobxImageUploadState extends State<MobxImageUpload> {
   Observer _localImage() {
     return Observer(
       builder: (context) {
-        return _imageUploadViewModel.file != null ? Image.file(_imageUploadViewModel.file!) : const SizedBox();
+        return _imageUploadViewModel.file != null
+            ? Image.file(_imageUploadViewModel.file!)
+            : const SizedBox();
       },
     );
   }
@@ -69,7 +74,8 @@ class _MobxImageUploadState extends State<MobxImageUpload> {
     return FittedBox(
       child: IconButton(
           onPressed: () async {
-            _imageUploadViewModel.saveLocalFile(await _imageUploadManger.fetchFromLibrary());
+            _imageUploadViewModel
+                .saveLocalFile(await _imageUploadManger.fetchFromLibrary());
           },
           icon: Lottie.network(_imageUplaodLottiePath)),
     );
