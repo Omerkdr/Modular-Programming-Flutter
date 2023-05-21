@@ -1,4 +1,4 @@
-# veli_capraz
+# Modular Flutter Learn
 
 A new Flutter project.
 
